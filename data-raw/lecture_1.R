@@ -10,3 +10,9 @@ x$rep_per <- x$rep / (x$rep + x$dem + x$other)
 
 elections <- x
 usethis::use_data(elections)
+
+# Starter code
+
+elections %>%
+  filter(county == "westchester") %>%
+  ggplot(aes(x = year, y = rep_per)) + geom_point()
