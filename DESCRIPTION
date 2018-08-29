@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "dave.kane@gmail.com")
 Description: Initial version of package which gathers raw data and then 
-  cleans (some of) it up for use in GOV 1005 at Harvard.
+  cleans (some of) it up for use in GOV 1005 at Harvard University.
 License: CC0
 Encoding: UTF-8
 LazyData: true
