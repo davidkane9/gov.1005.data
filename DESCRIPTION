@@ -11,3 +11,5 @@ Description: Initial version of package which gathers raw data and then
 License: CC0
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/davidkane9/gov.1005.data
+BugReports: https://github.com/davidkane9/gov.1005.data/issues
