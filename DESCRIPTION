@@ -13,3 +13,4 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/davidkane9/gov.1005.data
 BugReports: https://github.com/davidkane9/gov.1005.data/issues
+RoxygenNote: 6.1.0
