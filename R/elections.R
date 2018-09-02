@@ -4,9 +4,9 @@
 #'
 #' @format A tibble with 43,494 rows and 7 variables:
 #' \describe{
-#'   \item{year}
-#'   \item{state}
-#'   \item{county}
+#'   \item{year}{calendar year of the election}
+#'   \item{state}{US state (in all lower cases letters) in which county is located}
+#'   \item{county}{US county (in all lower case letters). Note that different states often have counties with the same names.}
 #'   \item{rep}{number of votes cast for the Republican candidate}
 #'   \item{dem}{number of votes cast for the Democratic candidate}
 #'   \item{other}{number of votes cast for other candidates}
