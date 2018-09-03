@@ -1,6 +1,6 @@
-# Script for creating data for Lecture 1.
+# Script for creating elections data
 
-# I am using data from
+# I am using data from QSS by Imai.
 
 # See http://qss.princeton.press/ for details.
 
