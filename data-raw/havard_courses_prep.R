@@ -51,7 +51,7 @@ x %>%
   filter(! enrollment == 0) %>%
   select(year, term, subject, title, enrollment, instructor) -> y
 
-courses <- y
-usethis::use_data(courses)
+# courses <- y
+# usethis::use_data(courses)
 
 
