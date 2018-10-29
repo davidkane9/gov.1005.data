@@ -39,7 +39,8 @@ x %>%
          title = `COURSE TITLE`,
          enrollment = `TOTAL ENROLLMENTS`,
          instructor = `INSTRUCTOR NAME`,
-         term_code = `MAX TERM`) %>%
+         term_code = `MAX TERM`,
+         description = `COURSE DESCRIPTION`) %>%
   mutate(century = ifelse(substr(term_code, 1, 1) == 1, 1900, 2000)) %>%
   mutate(year = century + as.numeric(substr(term_code, 2, 3))) %>%
   mutate(term = case_when(
@@ -49,9 +50,9 @@ x %>%
   filter(term != "other") %>%
   filter(! (term == "fall" & year == 2018)) %>%
   filter(! enrollment == 0) %>%
-  select(year, term, subject, title, enrollment, instructor) -> y
+  select(year, term, subject, title, enrollment, instructor, description) -> y
 
 # courses <- y
-# usethis::use_data(courses)
+# usethis::use_data(courses, overwrite = TRUE)
 
 
