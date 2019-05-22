@@ -1,0 +1,155 @@
+---
+title: "Thinking With Data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{plan}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(gov.1005.data)
+```
+
+Purpose of this document is to record some thoughts/plans about teaching inference on Gov 1005.
+
+
+### Lecture 1: Potential Outcomes
+
+You are 17 again, preparing to take the SAT. You see an ad for "Kane's Most Excellent SAT Tutoring Service," which promises to increase your score. Should you hire Kane? Consider two different outcomes. In the first, you use Kane. In the second, you don't.
+
+You 1450 1550 +100
+
+This simple example highlight many of the most important aspects of thinking with data. 
+
+First, we have the "unit" of analysis. In this case, you are the unit. But Kane is trying to sell his services to all your friends as well. They might also be units. 
+
+Second, we have the "treatment." There are two in this scenario. Either you use Kane or you don't. In this context, we sometimes call one of these the "control," meaning the default scenarios in which you do not change from the "normal" course of events. The other path involves the use of a "treatment." But, more generally, there might be multiple possible treatments.
+
+Third, we have the "outcome," your SAT score, measure as 400 to 1600 scale, i.e., math + verbal. 
+
+Fourth, there is the "causal effect" of Kane's tutoring. This is defined as the difference between the score you get if you are tutored (1550) and the score you would have gotten if you had not been tutored (1450). For you, the causal effect is 100 SAT points.
+
+This approach is called "potential outcomes" because, conceptually, we are comparing two outcomes both of which, prior to beginning the tutoring, are potential, i.e., they have not happened yet but either might happen.
+
+Class discussion:
+
+* Come up with a different (realistic) example involving Harvard students as the units of analysis, but with more than 2 treatments. Questions: What are the causal effects?
+
+* Come up with a different (realistic) example involving Harvard Expos classes as the units of analysis. What are the two treatments? What are the outcomes?
+
+Also called "counterfactual."
+
+
+### Lecture 2: Fundamental Problem of Causal Inference
+
+Reminder: When thinking about causation, we need to worry about units (rows in our data), treatments (columns in our data), and outcomes (values in our data).
+
+Show example of what this data looks like. Use SAT tutoring example, but with more rows.
+
+This seems easy! In order to determine the causal effect of X, we just compare the outcome with X to the outcome without X. The difference between the two is the causal effect of X.
+
+Class discussion: Come up with all the ways that this can go wrong.
+
+* You can't get the treament because Kane tutoring is not available where you like.
+
+* You can't avoid the treatment because your are Kane III.
+
+* Your brother getting the treament effects your outcome. SUTVA: Stable unit treatment value assumption.
+
+* You only ever see one potential outcome: The Fundamental Problem of Causal Inference.
+
+* Kane only gives the treatment to those he knows will benefit. An unmeasure covariate would help with this.
+
+### Lecture 3: No Causation Without Manipulation
+
+Reminder: When thinking about causation, we need to worry about units (rows in our data), treatments (columns in our data), and outcomes (values in our data).
+
+But columns can be more than treatments. The broader notion is "variables." And we never store the data with the actual question marks. Showing these helps us to see more clearly.
+
+Recall the basic display with question marks. Who got the treatment and why?
+
+Key role of the "assignment mechanism."
+
+Rubin Causal Model
+
+> Intuitively, the causal effect of one treatment, E, over another, C, for a particular unit and an interval of time from t 1 {\displaystyle t_{1}} t_{1} to t 2 {\displaystyle t_{2}} t_{2} is the difference between what would have happened at time t 2 {\displaystyle t_{2}} t_{2} if the unit had been exposed to E initiated at t 1 {\displaystyle t_{1}} t_{1} and what would have happened at t 2 {\displaystyle t_{2}} t_{2} if the unit had been exposed to C initiated at t 1 {\displaystyle t_{1}} t_{1}: 'If an hour ago I had taken two aspirins instead of just a glass of water, my headache would now be gone,' or 'because an hour ago I took two aspirins instead of just a glass of water, my headache is now gone.' Our definition of the causal effect of the E versus C treatment will reflect this intuitive meaning."
+
+Rubin, Donald (1974). "Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies". J. Educ. Psychol. 66 (5): 688–701
+
+Perfect doctor
+
+Confounding
+
+Role of randomization
+
+Placebo effect
+
+Hawthorne effect
+
+
+
+### Lecture 4: Randomization Tests
+
+Recall our the Fundamental Problem of Causal Inference. Show basic tibble with question marks.
+
+Sharp null hypothesis: No effect. Hypotheses tested must be "sharp" in the sense that they specify
+all possible potential outcomes.
+
+Recreate our table, with all the question marks gone.
+
+Fisher (1935)
+
+### Lecture 5: Average Effect
+
+Discuss all the reasons why an average effect might be wrong.
+
+Internal validity
+External validity
+
+### Lecture 5: Confidence Interval
+
+Not a confidence interval like AP Statistics and Stat 104. Who cares about that frequentist nonsense?
+
+Higdon page 19 reviews Rubin (1978):
+
+Rubin (1978) investigated the role of randomization in Bayesian inference for causal effects.
+In this view, potential outcomes are no longer fixed, but are considered random variables.
+Inference on causal parameters will be accomplished by modeling the missing potential outcomes
+as a function of covariates, revealed potential outcomes, and parameters. Inference on
+causal parameters is carried out by posterior distributions rather than confidence intervals.
+There are no hypothesis tests to invert.
+
+A betting interval. What will we see when we run the experiment again? Would you like to bet?
+
+Can we go this quickly directly to the land of Bayes?
+
+### Other lectures:
+
+More than one treatment. ANOVA. What is the Sharp null? What is the summary statistic? 
+
+Two numeric treatments.
+
+More than two numeric treatments. Linear model.
+
+Adjusting for covariates. Blocking. Rosenbaum (2002a), "Covariance adjustment in randomized experiments and observational studies," Statistical Science, 17, 286{327.
+
+Same thing again with observational data. Why won't it work?
+
+All the ways that observational studies fall. Examples?
+
+Prediction is the forecast of some number you don't know yet.
+
+John K. Kruschke, 201914 http://www.indiana.edu/~kruschke/
+Two Foundational Ideas of Bayesian Reasoning1.Bayesian reasoning is re-allocation of credibility across possibilities.2.The possibilities are parameter values in a mathematical model of data.
+
+
+
+
