@@ -30,7 +30,11 @@ simulate_null <- function(data, cause, result,
   # probability vector for the input frequency of the different causes. We then
   # sample using this probability. In both cases, we return n samples.
 
-  #
+  # Now that I look more closely, it is clear that infer does most (all?) of
+  # what I want, so there is no reason for my own function. One thing the
+  # generate() function does not seem to have is an elegant way to keep around
+  # (and or make use of) the actual result. That is, how does it know (later)
+  # which permutation is the actual assignment?
 
 
 }
