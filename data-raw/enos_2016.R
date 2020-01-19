@@ -73,5 +73,5 @@ x <- read_csv("pnas_data.csv",
 # Code for saving object
 
 train <- x
-# usethis::use_data(train, overwrite = TRUE)
+usethis::use_data(train, overwrite = TRUE)
 
