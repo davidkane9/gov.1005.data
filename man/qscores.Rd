@@ -3,12 +3,23 @@
 \docType{data}
 \name{qscores}
 \alias{qscores}
-\title{Scores from the Harvard Q-Guide}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 4409 rows and 10 columns.}
+\title{Scores from the Harvard Q Guide}
+\format{A tibble with 141 observations and 6 variables:
+\describe{
+  \item{names}{Course full name}
+  \item{course}{Course number}
+  \item{department}{Course department}
+  \item{overall}{average overall student evaluation on a scale of 1 to 5}
+  \item{workload}{average weekly workload in hours}
+  \item{number}{total number of students filling out evaluation forms}
+}}
+\source{
+\url{http://q-guide-plus.appspot.com/}
+}
 \usage{
 qscores
 }
 \description{
-Thanks to Benny Chang '22 for this data
+Thanks to Benny Chang '22 for this data.
 }
 \keyword{datasets}
