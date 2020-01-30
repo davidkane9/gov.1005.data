@@ -31,6 +31,7 @@ x <- read_json("q_scores.json", simplifyDataFrame = TRUE, flatten = TRUE) %>%
 
 # Code for saving object
 
-qscores <- x
-usethis::use_data(qscores, overwrite = TRUE)
+# write_csv(x, path = "qscores.csv")
+# qscores <- x
+# usethis::use_data(qscores, overwrite = TRUE)
 
